@@ -1,4 +1,4 @@
-export interface SDMUserData {
+export interface ADMUserData {
   username: string;
   password: string;
   role: UserRole;
