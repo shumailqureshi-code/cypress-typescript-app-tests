@@ -48,13 +48,12 @@ The following steps assume you already have a Cypress Cloud account and are part
 
 ## What's included
 
-### Custom example tests
-Located in `./cypress/e2e/custom-examples` these tests are provided by the contributors of this repository to demostrate useful patterns not covered by the default examples.
+### Custom tests
+Located in `./cypress/e2e/Login` these tests are provided by the contributors of this repository to demostrate useful patterns not covered by the default examples.
 
 |File Name| Description|
 |:--------|:-----------|
-|sign_in_example.cy.ts|Example of how to perform a login through the app utilzing the built in page objects |
-|session_example.cy.ts|Example of how to initiate a session and how subsequent tests are affected after a session is in use|
+|educator_student_auth.cy.ts|Example of how to initiate a session and how subsequent tests are affected after a session is in use|
 
 ### Cypress grep
 We use [Cypress grep](https://github.com/cypress-io/cypress/tree/develop/npm/grep) to add custom tags to test cases and allows for the filtering of test cases based on their tags. This only works when running via `npm run cy:run`, it will not work when running via Cypress LaunchPad.
