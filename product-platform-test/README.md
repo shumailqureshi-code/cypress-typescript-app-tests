@@ -48,9 +48,6 @@ The following steps assume you already have a Cypress Cloud account and are part
 
 ## What's included
 
-### Cypress example tests
-Located in `./cypress/e2e/1-getting-started` and `./cypress/e2e/2-advanced-examples` these tests are provided by Cypress to showcase the different actions that can be taken during tests. Please keep in mind that these examples don't necessarily follow best practices.
-
 ### Custom example tests
 Located in `./cypress/e2e/custom-examples` these tests are provided by the contributors of this repository to demostrate useful patterns not covered by the default examples.
 
