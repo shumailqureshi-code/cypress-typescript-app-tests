@@ -1,6 +1,6 @@
 import { defineConfig } from 'cypress';
 import reporterUtils from './reporterUtils';
-import sdmUsers from './cypress/test_data/users/admUsers';
+import admUsers from './cypress/test_data/users/admUsers';
 import platformUsers from './cypress/test_data/users/platformUsers/sync';
 
 export default defineConfig({
@@ -20,33 +20,33 @@ export default defineConfig({
 
       config.env.TEST_ENV = config.env.TEST_ENV ? config.env.TEST_ENV.toLocaleLowerCase() : 'dev';
 
-      if (config.env.AUTH === 'SDM') {
+      if (config.env.AUTH === 'ADM') {
         switch (config.env.TEST_ENV) {
           case 'prod':
             config.baseUrl = 'https://media.sch.com';
-            config.env.R4R_TEACHER_URL = 'https://teacher.abc.sch.com';
-            config.env.R4R_STUDENT_URL = 'https://student.abc.sch.com';
+            config.env.TEACHER_URL = 'https://teacher.abc.sch.com';
+            config.env.STUDENT_URL = 'https://student.abc.sch.com';
             break;
           default:
             config.baseUrl = `https://media-${config.env.TEST_ENV}.sch.com`;
-            config.env.R4R_TEACHER_URL = `https://teacher.${config.env.TEST_ENV}.abc.sch.com`;
-            config.env.R4R_STUDENT_URL = `https://student.${config.env.TEST_ENV}.abc.sch.com`;
+            config.env.TEACHER_URL = `https://teacher.${config.env.TEST_ENV}.abc.sch.com`;
+            config.env.STUDENT_URL = `https://student.${config.env.TEST_ENV}.abc.sch.com`;
             break;
         }
-        config.env.USERS = sdmUsers[config.env.TEST_ENV as Env];
+        config.env.USERS = admUsers[config.env.TEST_ENV as Env];
       } else {
         switch (config.env.TEST_ENV) {
           case 'prod':
             config.baseUrl = 'https://abc-platform.sch.com';
-            config.env.R4R_TEACHER_URL =
+            config.env.TEACHER_URL =
               'https://teacher-plat.abc.sch.com';
-            config.env.R4R_STUDENT_URL =
+            config.env.STUDENT_URL =
               'https://student-plat.abc.sch.com';
             break;
           default:
             config.baseUrl = `https://abc-platform-${config.env.TEST_ENV}.sch.com`;
-            config.env.R4R_TEACHER_HUB_URL = `https://teacher-plat.${config.env.TEST_ENV}.abc.sch.com`;
-            config.env.R4R_STUDENT_HUB_URL = `https://student-plat.${config.env.TEST_ENV}.abc.sch.com`;
+            config.env.TEACHER_HUB_URL = `https://teacher-plat.${config.env.TEST_ENV}.abc.sch.com`;
+            config.env.STUDENT_HUB_URL = `https://student-plat.${config.env.TEST_ENV}.abc.sch.com`;
             break;
         }
         config.env.USERS = platformUsers[config.env.TEST_ENV as Env];
