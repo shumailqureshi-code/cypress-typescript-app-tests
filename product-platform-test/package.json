@@ -1,0 +1,41 @@
+{
+  "name": "cypress-test-framework",
+  "version": "0.0.8",
+  "private": "true",
+  "scripts": {
+    "lint": "eslint --fix .",
+    "prepare": "husky",
+    "cy:open": "cross-env CYPRESS_TEST_ENV=$ENV CYPRESS_AUTH=$AUTH cypress open",
+    "cy:run": "cross-env CYPRESS_TEST_ENV=$ENV CYPRESS_AUTH=$AUTH CYPRESS_grepTags=$TAGS cypress run --spec 'cypress/e2e/**/*.cy.ts' --browser chrome --record false",
+    "cy:record": "cross-env CYPRESS_TEST_ENV=$ENV CYPRESS_AUTH=$AUTH CYPRESS_grepTags=$TAGS cypress run --spec 'cypress/e2e/**/*.cy.ts' --browser chrome --record",
+    "cy:debug": "cross-env DEBUG=cypress:* CYPRESS_TEST_ENV=$ENV CYPRESS_AUTH=$AUTH CYPRESS_grepTags=$TAGS cypress run --spec 'cypress/e2e/**/*.cy.ts' --record false --browser chrome 2>&1 | tee console_output.txt"
+  },
+  "dependencies": {
+    "@cypress/grep": "4.1.0",
+    "cypress": "14.2.0",
+    "cypress-iframe": "1.0.1",
+    "junit-report-merger": "7.0.1",
+    "mochawesome-merge": "4.4.1",
+    "mochawesome-report-generator": "6.2.0",
+    "moment": "2.30.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.26.1",
+    "@typescript-eslint/parser": "8.26.1",
+    "cross-env": "7.0.3",
+    "cypress-multi-reporters": "2.0.5",
+    "eslint": "8.57.1",
+    "eslint-config-prettier": "10.1.1",
+    "eslint-plugin-cypress": "3.5.0",
+    "eslint-plugin-import": "2.31.0",
+    "eslint-plugin-mocha": "10.5.0",
+    "eslint-plugin-prettier": "5.2.3",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.3",
+    "mocha-junit-reporter": "2.2.1",
+    "mochawesome": "7.1.3",
+    "playwright-webkit": "1.51.0",
+    "prettier": "3.5.3",
+    "typescript": "5.8.2"
+  }
+}
