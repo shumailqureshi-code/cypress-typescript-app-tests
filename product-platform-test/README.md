@@ -56,7 +56,7 @@ Located in `./cypress/e2e/custom-examples` these tests are provided by the contr
 
 |File Name| Description|
 |:--------|:-----------|
-|sign_in_example.cy.ts|Example of how to perform a login through SDM utilzing the built in page objects |
+|sign_in_example.cy.ts|Example of how to perform a login through the app utilzing the built in page objects |
 |session_example.cy.ts|Example of how to initiate a session and how subsequent tests are affected after a session is in use|
 
 ### Cypress grep
